@@ -1,0 +1,318 @@
+.token {
+    background: #1880C7;
+    padding: 82px 0;
+    @include lg {
+        padding: 50px 0;
+    }
+    @include sm {
+        padding: 40px 0;
+    }
+    .token-section {
+        border: 1px solid #8BBFE3;
+        border-radius: 90px;
+        .token-section-top {
+            width: 1px;
+            height: 100%;
+            left: 44%;
+            background-color: #8BBFE3;
+            @include lg {
+                left: 51%;
+            }
+            @include mmd {
+                display: none;
+                border-radius: 0;
+                border: 1px solid transparent !important;
+            }
+        }
+        .token-section-middle {
+            width: 56%;
+            height: 1px;
+            background-color: #8BBFE3;
+            right: 0;
+            @include lg {
+                width: 49%;
+            }
+            @include mmd {
+                display: none;
+            }
+        }
+        @include mmd {
+            border: 0px;
+        }
+    }
+    &-content {
+        border-radius: 20px;
+        background: $primary;
+        padding: 12px 37px 28px 37px;
+        @include xl {
+            padding: 12px 20px 28px 20px;
+        }
+        @include lg {
+            padding: 12px 20px 28px 20px;
+        }
+        @include sm {
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .title {
+            color: $black;
+            @include font-24;
+            font-weight: 700;
+            line-height: 130%;
+            text-transform: uppercase;
+        }
+        .date-section {
+            .cricle {
+                --width: 72px;
+                width: var(--width);
+                height: var(--width);
+                border-radius: 50%;
+                border: 1px solid #1880C7;
+                padding: 7px;
+                .cricle2 {
+                    border: 1px solid #1880C7;
+                    padding: 8px;
+                    --width: 56px;
+                    width: var(--width);
+                    height: var(--width);
+                    border-radius: 50%;
+                    span {
+                        color: $black;
+                        font-family: $font-4;
+                        @include font-20;
+                        font-weight: 600;
+                        line-height: normal;
+                    }
+                    p {
+                        color: $black;
+                        font-family: $font-4;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .line {
+            border-radius: 50px;
+            border: 1px solid $black;
+            padding: 7px;
+            &-bar {
+                border-radius: 50px;
+                border: 1px solid $black;
+                background: $black;
+                &-end {
+                    border-radius: 50px 0px 0px 50px;
+                    background: #1880C7;
+                    width: 85%;
+                    p {
+                        color: $white;
+                        font-family: $font-4;
+                        @include font-16;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+        .token-body {
+            .title {
+                color: $black;
+                @include font-20;
+                font-weight: 700;
+                line-height: normal;
+            }
+            .value {
+                color: $black;
+                font-family: $font-4;
+                @include font-20;
+            }
+            .subtitle {
+                color: $black;
+                font-family: $font-4;
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 150%;
+            }
+        }
+        .select-area {}
+        .input-area {
+            &-text {
+                p {
+                    color: $black;
+                    font-family: $font-4;
+                    @include font-18;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+                input {
+                    background: $black;
+                    border-radius: 8px;
+                    padding: 16px 24px;
+                    color: $white;
+                    text-align: center;
+                    font-family: $font-4;
+                    @include font-18;
+                    line-height: normal;
+                    text-align: start;
+                    padding-left: 24px;
+                    &::placeholder {
+                        color: $white;
+                    }
+                }
+            }
+        }
+        .btn-area {
+            .btn {
+                color: $white;
+                font-family: $font-4;
+                @include font-20;
+                font-weight: 700;
+                padding: 16px 24px;
+                border-radius: 8px;
+                border: 2px solid $black;
+                background: #1880C7;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    background: transparent !important;
+                    border: 2px solid $black !important;
+                    color: $black !important;
+                }
+                @include xxl {
+                    font-size: 16px;
+                }
+                @include xl {
+                    font-size: 16px;
+                    padding: 14px 10px;
+                }
+                @include lg {
+                    padding: 14px 10px;
+                }
+                @include sm {
+                    padding: 10px;
+                    font-size: 14px;
+                    border: 1px solid $black;
+                }
+            }
+        }
+    }
+    &-text {
+        &-first {
+            padding: 50px 0 50px 30px;
+            @include lg {
+                padding: 20px 0 20px 20px;
+            }
+            @include md {
+                padding: 20px 0 20px 20px;
+            }
+            @include sm {
+                padding: 10px 0 10px 10px;
+            }
+            p {
+                color: $white;
+                @include font-26;
+                font-weight: 500;
+                line-height: 160%;
+            }
+        }
+        &-secend {
+            padding: 50px 0 50px 30px;
+            @include lg {
+                padding: 20px 0 20px 20px;
+            }
+            @include md {
+                padding: 20px 0 20px 20px;
+            }
+            @include sm {
+                padding: 10px 0 10px 10px;
+            }
+            p {
+                color: $white;
+                @include font-20;
+                font-weight: 500;
+                line-height: 160%;
+            }
+        }
+    }
+}
+
+.payment {
+    &-btn {
+        background-color: $black;
+        border-radius: 8px;
+        padding: 12.5px 30px;
+        cursor: pointer;
+        color: $white;
+    }
+    &-dropdown {
+        background-color: #2B2B2B;
+        padding: 10px;
+        padding-top: 1rem;
+        margin-top: -6px;
+        row-gap: 8px;
+        column-gap: 26px;
+        max-height: 300px;
+        overflow: auto;
+        @include custom-scroll(6px)
+    }
+    &-item {
+        cursor: pointer;
+        background-color: $black;
+        color: $white;
+        width: calc(50% - 26px);
+        border-radius: 8px;
+        padding: 11px 18px;
+        user-select: none;
+        @include sm {
+            width: 100%;
+        }
+        & img {
+            max-width: 28px;
+        }
+    }
+    &-chain {
+        padding: 30px 20px;
+        background-color: #2A2A2A;
+        overflow: auto;
+        @include custom-scroll(6px);
+        & .chain {
+            &-item {
+                padding: 12px;
+                padding-bottom: 20px;
+                background-color: #141419;
+                border-radius: 5px;
+                & .btn {
+                    --bs-btn-padding-y: 8px;
+                }
+                & p {
+                    --bs-text-opacity: .7;
+                    &:not(.chain-copy p) {
+                        @include sm {
+                            font-size: 14px !important;
+                        }
+                    }
+                }
+            }
+            &-copy {
+                border-radius: 8px;
+                background-color: $black;
+                padding: 16px 4px;
+                padding-left: 12px;
+                padding-right: 32%;
+                & p {
+                    word-break: break-all;
+                }
+            }
+        }
+        & .btn {
+            --bs-btn-padding-y: 14px;
+            font-weight: 700;
+            &.bg-transparent {
+                border-color: #8D8787 !important;
+                color: $white !important;
+                &:hover {
+                    background-color: $primary !important;
+                    border-color: $primary !important;
+                    color: $black !important;
+                }
+            }
+        }
+    }
+}

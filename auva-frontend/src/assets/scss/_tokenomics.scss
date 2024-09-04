@@ -1,0 +1,204 @@
+.tokenomics {
+    background-color: #1880C7;
+    position: relative;
+    padding: 68px 0;
+    @include ssm {
+        padding: 50px 0;
+    }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 60%;
+            transform: translate(-50%, 50%);
+            height: 139px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.5);
+            @include ssm {
+                display: none;
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 147px;
+            @include xl {
+                left: 100px;
+            }
+            transform: translate(-50%, 50%);
+            height: 139px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.5);
+            @include ssm {
+                display: none;
+            }
+        }
+    &-border {
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        padding-bottom: 72px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 143px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        @include mmd {
+            display: none;
+        }
+    }
+    &-heading {
+        text-align: center;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url('../img/tok-bg.png') no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        & h2 {
+            color: $white;
+            @include font-70;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-bottom: none;
+            border-top: none;
+            display: inline-block;
+            padding: 100px 70px 86px;
+            @include md {
+                padding: 50px 70px;
+            }
+            @include sm {
+                padding: 30px 20px;
+            }
+            @include ssm {
+                border: none;
+            }
+            margin-bottom: 0;
+        }
+    }
+
+    &-main_box {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        padding: 0 147px;
+        @include xl {
+            padding: 0 100px;
+        }
+        @include lg {
+            padding: 0 50px;
+        }
+        @include md {
+            padding: 0 30px;
+        }
+        @include sm {
+            padding: 0 15px;
+        }
+        .box {
+            flex: 0 0 50%;
+            padding: 112px 100px 70px;
+            @include xl {
+                padding: 112px 50px 70px;
+            }
+            @include lg {
+                padding: 80px 20px 50px;
+            }
+            @include md {
+                padding: 50px 15px 40px;
+            }
+            @include sm {
+                padding: 30px 15px 30px;
+            }
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            min-height: 100%;
+            border-right: none;
+            border-bottom: none;
+
+            &:nth-child(2) {
+                padding-left: 250px;
+                @include xl {
+                    padding-left: 130px;
+                }
+                @include lg {
+                    padding-left: 90px;
+                }
+                @include md {
+                    padding-left: 80px;
+                }
+                @include sm {
+                    padding-left: 15px;
+                }
+                border-right: 1px solid rgba(255, 255, 255, 0.5);
+            }
+
+            &:nth-child(3) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            }
+
+            &:nth-child(4) {
+                padding-left: 250px;
+                @include xl {
+                    padding-left: 130px;
+                }
+                @include lg {
+                    padding-left: 90px;
+                }
+                @include md {
+                    padding-left: 80px;
+                }
+                @include sm {
+                    padding-left: 15px;
+                }
+                border-right: 1px solid rgba(255, 255, 255, 0.5);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            }
+
+            & h3 {
+                color: #FFE12F;
+                font-family: $font-1;
+                @include font-36;
+                font-weight: 700;
+            }
+
+            & p {
+                color: $white;
+                font-family: $font-1;
+                @include font-32;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &-medel_img {
+        width: 258px;
+        @include xl {
+            width: 200px;
+        }
+        @include lg {
+            width: 136px;
+        }
+        @include md {
+            width: 110px;
+        }
+        position: absolute;
+        @include sm {
+            position: relative;
+            display: none;
+        }
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

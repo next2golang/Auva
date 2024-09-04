@@ -1,0 +1,297 @@
+.team {
+    padding: 70px 0;
+    padding-top: 70px;
+    padding-bottom: 100px;
+    @include sm {
+        padding-top: 50px;
+        padding-bottom: 70px;
+    }
+    position: relative;
+    &-slider {
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 50px 70px;
+        @include lg {
+            padding: 50px 40px;
+        }
+        @include mmd {
+            padding: 50px 30px;
+        }
+        & .swiper {
+            --margin: -34px;
+            &-button {
+                &-prev,
+                &-next {
+                    background-color: $white;
+                    color: rgba($color: $black, $alpha: .50);
+                }
+            }
+        }
+    }
+    &-title {
+        text-align: center;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url('../img/tok-bg.png') no-repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            @include ssm {
+                display: none;
+            }
+        }
+        & h2 {
+            color: $white;
+            @include font-70;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-bottom: none;
+            border-top: none;
+            display: inline-block;
+            padding: 100px 70px 86px;
+            @include xxl {
+                padding: 80px 70px 65px;
+            }
+            @include xl {
+                padding: 80px 70px 65px;
+            }
+            @include lg {
+                padding: 80px 70px 65px;
+            }
+            @include md {
+                padding: 50px 70px;
+            }
+            @include sm {
+                padding: 30px 20px;
+            }
+            @include ssm {
+                border: none;
+                padding-top: 0;
+            }
+            margin-bottom: 0;
+        }
+    }
+    &-border {
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        padding-bottom: 72px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 143px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        @include sm {
+            display: none;
+        }
+    }
+    .testimonial-slider {
+        overflow: visible;
+        .swiper-pagination-bullet {
+            margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 15px) !important;
+            width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 18px));
+            height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 18px));
+            background: #8B8B8B;
+            opacity: 1;
+            cursor: pointer;
+            @include mmd {
+                margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 10px) !important;
+                width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 12px));
+                height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 12px));
+            }
+        }
+        .swiper-pagination-bullet-active {
+            background: $white !important;
+        }
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
+            max-width: max-content;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            top: calc(100% + 40px);
+            border: 1px solid $white;
+            padding: 22px 25px;
+            border-radius: 50px;
+            line-height: 1;
+            @include flex;
+            @include lg {
+                padding: 22px 40px;
+            }
+            @include md {
+                padding: 18px 40px;
+            }
+            @include sm {
+                padding: 10px 30px;
+            }
+        }
+    }
+}
+
+.slider {
+    &-border_bottom {
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: none;
+        border-right: none;
+        padding-bottom: 72px;
+        position: relative;
+        @include sm {
+            display: none;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 148%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 72px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        @include ssm {
+            display: none;
+        }
+    }
+}
+
+.slider {
+    &-nav_bar {
+        position: absolute;
+        top: 350px;
+        right: 300px;
+        @include xxl {
+            top: 300px;
+            right: 200px;
+        }
+        @include xl {
+            top: 300px;
+            right: 150px;
+        }
+        @include lg {
+            top: 270px;
+            right: 140px;
+        }
+        @include md {
+            top: 220px;
+            right: 60px;
+        }
+        @include sm {
+            top: 36px;
+            left: 6px;
+            position: relative;
+        }
+        & button {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 30px;
+            &:disabled {
+                color: #ffffff50;
+            }
+        }
+    }
+    &-box {
+        border: 1px solid #808080;
+        padding: 20px;
+    }
+    &-title {
+        & h3 {
+            color: $white;
+            font-family: $font-1;
+            @include font-18;
+            font-weight: 700;
+            padding-bottom: 5px;
+            & svg {
+                height: 16px;
+                width: 14px;
+                margin-right: 14px;
+                margin-bottom: 6px;
+            }
+        }
+    }
+    &-bio {
+        padding-top: 20px;
+        & .bio {
+            margin-bottom: 20px;
+        }
+        & h3 {
+            @include font-18;
+            font-family: $font-1;
+            margin-bottom: 0;
+        }
+        & p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        & ul {
+            display: flex;
+            gap: 24px;
+            @include xxl {
+                gap: 10px;
+            }
+            @include xl {
+                gap: 10px;
+            }
+            @include lg {
+                gap: 10px;
+            }
+            @include md {
+                gap: 10px;
+            }
+            @include sm {
+                gap: 8px;
+            }
+            & li {
+                & a {
+                    font-size: 14px;
+                    color: $white;
+                    @include xxl {
+                        font-size: 13px;
+                    }
+                    @include xl {
+                        font-size: 11px;
+                    }
+                    @include lg {
+                        font-size: 12px;
+                    }
+                    @include md {
+                        font-size: 12px;
+                    }
+                    &:hover {
+                        color: #FFE12F;
+                    }
+                    // & svg {
+                    //     margin-left: 8px;
+                    // }
+                    &:hover svg path {
+                        fill: #FFE12F;
+                    }
+                }
+            }
+        }
+    }
+    &-images {
+        text-align: center;
+        position: relative;
+        padding: 25px 0;
+        z-index: -1;
+        img {
+            max-width: 174px;
+            border-radius: 24px;
+        }
+    }
+    &-profile_bg {
+        max-width: 222px !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+}

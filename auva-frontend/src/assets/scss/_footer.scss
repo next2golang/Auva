@@ -1,0 +1,240 @@
+.footer {
+    background-color: #FFE12F;
+    padding-top: 60px;
+    &-wrap {
+        border-top: 1px solid #7F7F7F;
+        border-radius: 90px;
+    }
+    .container-fluid {
+        padding: 0px;
+    }
+    &-content {
+        @include sm {
+            flex-direction: column;
+        }
+        .footer-blankleft {
+            flex: 0 0 20%;
+            position: relative;
+            top: 50%;
+            padding-top: 55px;
+            @include sm {
+                padding-top: 0;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #00000050;
+                @include md {
+                    display: none;
+                }
+            }
+        }
+        &-middle {
+            border: 1px solid #00000050;
+            border-top: none;
+            border-bottom: none;
+            padding: 83px 157px;
+            @include xl {
+                padding: 60px 80px;
+            }
+            @include lg {
+                padding: 80px 30px;
+            }
+            @include md {
+                padding: 50px 30px;
+            }
+            @include sm {
+                padding: 50px 20px 20px 20px;
+                border: 0;
+            }
+            flex: 0 0 60%;
+            h2 {
+                color: $black;
+                @include font-70;
+                font-style: normal;
+                font-weight: 700;
+                margin-bottom: 50px;
+                @include sm {
+                    margin-bottom: 15px;
+                    text-align: start;
+                    padding-left: 28px;
+                }
+            }
+        }
+        &-right {
+            flex: 0 0 20%;
+            .imageright {
+                padding: 0 43px;
+                @include xl {
+                    padding: 0 30px;
+                }
+                @include lg {
+                    padding: 0 15px;
+                }
+                @include sm {
+                    padding-bottom: 40px;
+                }
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                & img {
+                    max-width: 224px;
+                    width: 100%;
+                    @include xl {
+                        max-width: 140px;
+                    }
+                    @include lg {
+                        max-width: 90px;
+                    }
+                    @include md {
+                        max-width: 90px;
+                    }
+                    @include sm {
+                        max-width: 90px;
+                    }
+                }
+            }
+            .des {
+                padding-top: 60px;
+                padding-left: 40px;
+                border-top: 1px solid #808080;
+                @include lg {
+                    border-top: 0;
+                    padding-top: 15px;
+                }
+                @include mmd {
+                    border-top: 0;
+                    padding-top: 15px;
+                    padding-left: 0;
+                }
+                @include sm {
+                    padding-top: 0px;
+                }
+                p {
+                    color: $black;
+                    @include font-18;
+                    font-weight: 500;
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+    .reactangle1 {
+        width: 64px !important;
+        height: 214px !important;
+        display: inline-block;
+        border: 1 px solid #808080;
+        border-top: 1px solid #808080;
+        border-right: 1px solid #808080;
+        border-bottom: 1px solid #808080;
+        border-radius: 0 20px 20px 0;
+        left: 0;
+        top: 31%;
+        background-color: #FFE12E;
+        @include mmd {
+            display: none;
+        }
+    }
+    .reactangle2 {
+        width: 64px !important;
+        height: 214px !important;
+        display: inline-block;
+        border: 1px solid #808080;
+        border-right: none;
+        border-radius: 20px 0px 0px 20px;
+        right: 0;
+        top: 31%;
+        background-color: #FFE12E;
+        @include mmd {
+            display: none;
+        }
+    }
+    .line1 {
+        height: 100%;
+        width: 1px;
+        background-color: #808080;
+        left: 20%;
+        top: 0px;
+        @include xxl {
+            left: 26%;
+        }
+        @include xl {
+            left: 26%;
+        }
+        @include lg {
+            left: 30%;
+        }
+        @include mmd {
+            display: none;
+        }
+    }
+    .line2 {
+        height: 100%;
+        width: 1px;
+        background-color: #808080;
+        right: calc(20% - 6px);
+        top: 0px;
+        @include xxl {
+            right: 26.4%;
+        }
+        @include xl {
+            right: 28.4%;
+        }
+        @include lg {
+            right: 31%;
+        }
+        @include mmd {
+            display: none;
+        }
+    }
+    &-copy_right {
+        background-color: $black;
+    }
+    &-copy_link {
+        padding: 14px 0;
+        @include sm {
+            padding: 28px 0;
+        }
+        & li {
+            @include mmd {
+                padding-top: 5px;
+            }
+            &:first-child {
+                padding-top: 0;
+            }
+            @include sm {
+                text-align: center;
+            }
+            & a {
+                color: rgba(255, 255, 255, 0.70);
+                font-family: $font-1;
+                @include font-20;
+                font-weight: 500;
+                @include md {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    &-copy_text {
+        border-top: 1px solid rgba(255, 255, 255, 0.50);
+        padding: 26px 0;
+        & li {
+            padding-top: 10px;
+            &:first-child {
+                padding-top: 0;
+            }
+            @include sm {
+                text-align: center;
+            }
+            & a {
+                color: rgba(255, 255, 255, 0.70);
+                @include font-20;
+                font-family: $font-2;
+            }
+        }
+    }
+}

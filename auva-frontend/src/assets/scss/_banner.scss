@@ -1,0 +1,253 @@
+.banner {
+    &-left {
+        width: var(--banner-left);
+        flex: 0 0 auto;
+    }
+    &-middle {
+        width: calc(100% - var(--banner-left) - var(--banner-right));
+        flex: 0 0 auto;
+    }
+    &-right {
+        width: var(--banner-right);
+        flex: 0 0 auto;
+    }
+    &_content {
+        display: flex;
+        justify-content: center;
+        @include sm {
+            flex-direction: column-reverse;
+        }
+        .content_box {
+            border: 1px solid rgba($color: $white, $alpha: .50);
+            border-top: none;
+            flex: 0 0 50%;
+            h1 {
+                color: $white;
+                padding: 80px 110px 80px 62px;
+                @include xxl {
+                    padding: 50px 20px 50px 20px;
+                }
+                @include xl {
+                    padding: 50px 20px 50px 20px;
+                }
+                @include lg {
+                    padding: 25px 20px 30px 20px;
+                }
+                @include md {
+                    padding: 25px 20px 30px 20px;
+                }
+                @include sm {
+                    padding: 40px 15px 30px;
+                    text-align: center;
+                }
+                border-bottom: 1px solid #ffffff50;
+                @include font-53;
+                font-weight: 700;
+                span {
+                    color: #FFE12F;
+                }
+            }
+        }
+        .banner_button {
+            text-align: center;
+            padding: 100px 0;
+            @include xxl {
+                padding: 47px;
+            }
+            @include xl {
+                padding: 44px;
+            }
+            @include lg {
+                padding: 20px;
+            }
+            @include mmd {
+                padding: 20px;
+            }
+            @include sm {
+                padding: 30px;
+            }
+            @include ssm {
+                padding: 16px;
+            }
+            .btns {
+                display: inline-block;
+                color: $white;
+                padding: 20px 40px;
+                @include ssm {
+                    padding: 16px 20px;
+                }
+                border-radius: 10px;
+                border: none;
+                @include font-40;
+                font-family: $font-1;
+                position: relative;
+                z-index: 2;
+                @include transition;
+                .bg_birder {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                }
+                & svg {
+                    width: 30px;
+                    margin-left: 10px;
+                    @include transition;
+                    path {
+                        @include transition;
+                    }
+                    @include mmd {
+                        width: 25px;
+                        margin-left: 10px;
+                    }
+                }
+                &:hover {
+                    color: #FFE12F;
+                }
+                &:hover svg path {
+                    fill: #FFE12F;
+                }
+                &:hover svg {
+                    transform: rotate(40deg);
+                }
+            }
+        }
+    }
+    &_images {
+        flex: 1 1 50%;
+    }
+    &_logos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 72px 60px 56px;
+        border: 1px solid rgba($color: $white, $alpha: .50);
+        border-top: none;
+        border-bottom: none;
+        @include lg {
+            padding: 58px 20px;
+        }
+        @include sm {
+            padding: 30px 20px;
+            overflow: auto;
+        }
+        & li {
+            width: auto;
+            flex: 0 0 auto;
+            @include sm {
+                width: 65%;
+            }
+        }
+    }
+    .social_icon {
+        ul {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        li {
+            border-top: 1px solid rgba($color: $white, $alpha: .50);
+            &:first-child {
+                border-top: none;
+            }
+        }
+        a {
+            display: inline-block;
+            padding: 50px 62px;
+            @include xxl {
+                padding: 40px 40px;
+            }
+            @include xl {
+                padding: 35px 30px;
+            }
+            @include lg {
+                padding: 30px 30px;
+            }
+            @include md {
+                padding: 20px 30px;
+            }
+            @include sm {
+                padding: 28px 15px;
+            }
+            @include transition;
+            img {
+                @include transition;
+                @include xxl {
+                    width: 95px;
+                }
+                @include xl {
+                    width: 80px;
+                }
+                @include lg {
+                    width: 60px;
+                }
+                @include md {
+                    width: 45px;
+                }
+                @include sm {
+                    width: 30px;
+                }
+            }
+            &:hover img {
+                transform: scale(1.05);
+            }
+        }
+    }
+    .banner_star {
+        ul {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            li {
+                border-top: 1px solid #ffffff50;
+                padding: 90px 62px;
+                @include xxl {
+                    padding: 63px 40px;
+                }
+                @include xl {
+                    padding: 50px 40px;
+                }
+                @include lg {
+                    padding: 30px 15px;
+                }
+                @include md {
+                    padding: 25px 15px;
+                }
+                @include sm {
+                    padding: 20px 15px;
+                }
+                &:first-child {
+                    border-top: none;
+                }
+                & svg {
+                    @include xxl {
+                        width: 95px;
+                    }
+                    @include xl {
+                        width: 85px;
+                    }
+                    @include lg {
+                        width: 65px;
+                    }
+                    @include md {
+                        width: 45px;
+                    }
+                    @include sm {
+                        width: 30px;
+                    }
+                }
+            }
+        }
+    }
+    &-imges {
+        flex: 0 0 50%;
+        & img {
+            width: 100%;
+            max-height: 686px;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

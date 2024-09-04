@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+// 
+$font-1:"Kumbh Sans",
+sans-serif;
+$font-2: "Alegreya",
+serif;
+$font-3: "Roboto",
+sans-serif;
+$font-4: "Inter",
+sans-serif;
+$white:#fff;
+$black:#000;
+$primary: #FFE12E;
+$secondary: #050505;
+$text:#C0C3C5;
+$heading: $black;
+$border:#4B4B4B;
+$bg:$black;
+:root {
+    scroll-behavior: auto !important;
+}

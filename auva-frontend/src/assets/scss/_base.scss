@@ -1,0 +1,262 @@
+body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: calc(26px/16px);
+    color: $text;
+    font-family: $font-1;
+    background-color: $bg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $white;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none !important;
+    @include transition;
+}
+
+input,
+textarea,
+button {
+    padding: 10px 25px;
+    border: 1px solid $border;
+    outline: none;
+    @include transition;
+    &:focus {
+        outline: none;
+        border-color: $primary;
+    }
+}
+
+
+/*Hide number spin button*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.common {
+    &-svg {
+        display: inline-block;
+        height: 1em;
+        overflow: visible;
+        vertical-align: -0.125em;
+    }
+    &-row {
+        --bs-gutter-x: 32px;
+        margin-bottom: calc(var(--bs-gutter-x) * -1);
+        @include mmd {
+            --bs-gutter-x: 24px;
+        }
+        &>div {
+            margin-bottom: var(--bs-gutter-x);
+        }
+    }
+    &-padding {
+        --padding-y: 120px;
+        --padding-x: 0;
+        padding: var(--padding-y) var(--padding-x);
+        @include xl {
+            --padding-y: 100px;
+        }
+        @include lg {
+            --padding-y: 100px;
+        }
+        @include md {
+            --padding-y: 80px;
+        }
+        @include sm {
+            --padding-y: 60px;
+        }
+        &-top {
+            padding-top: var(--padding-y);
+        }
+    }
+    &-title {
+        margin-bottom: 60px;
+        @media (min-width: 1440px) {
+            padding: 0 4%;
+        }
+        @include md {
+            margin-bottom: 40px;
+        }
+        @include sm {
+            margin-bottom: 30px;
+        }
+        & h2 {
+            @include font-68;
+        }
+        & p {
+            @include font-20;
+        }
+    }
+}
+
+.btn {
+    --bs-btn-padding-x: 20px;
+    --bs-btn-padding-y: 7px;
+    --bs-btn-color: #0D0D0C;
+    --bs-btn-border-width: 1px;
+    --bs-btn-border-color: #F8F709;
+    --bs-btn-font-size: 18px;
+    --bs-btn-border-radius: 100px;
+    @include sm {
+        --bs-btn-font-size: 16px;
+        --bs-btn-line-height: 26px;
+    }
+    &:hover {
+        background-color: $primary !important;
+        border-color: $primary !important;
+        color: $white !important;
+    }
+    &.bg-primary {
+        border-color: $primary !important;
+        color: $secondary !important;
+        &:hover {
+            background-color: transparent !important;
+            color: $primary !important;
+        }
+    }
+    &.bg-transparent {
+        border-color: $primary !important;
+        color: $primary !important;
+        &:hover {
+            background-color: $primary !important;
+            color: $secondary !important;
+        }
+    }
+}
+
+// social 
+.social {
+    &-list {
+        gap: 50px !important;
+        @include lg {
+            gap: 20px !important;
+        }
+        @include mmd {
+            gap: 15px !important;
+        }
+    }
+    &-link {
+        --width: 129px;
+        --height: 116px;
+        width: var(--width);
+        height: var(--height);
+        color: $heading;
+        @include font-24;
+        @include lg {
+            --width: 90px;
+            --height: 90px;
+        }
+        @include mmd {
+            --width: 85px;
+            --height: 58px;
+        }
+        @include sm {
+            --width: 44px;
+        }
+        & img {
+            @include transition;
+        }
+        &:hover {
+            & img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media (min-width:1600px) {
+    .container {
+        max-width: 1534px;
+    }
+}
+
+#root {
+    overflow: hidden;
+}
+
+.swiper {
+    &-pagination {
+        padding: 0 !important;
+        border: none !important;
+        &-bullet {
+            position: relative;
+            z-index: 1;
+            &::after {
+                content: "";
+                --width: 24px;
+                width: var(--width);
+                height: var(--width);
+                border-radius: 100%;
+                background-color: $white;
+                filter: blur(4px);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                @include hidden;
+                @include transition;
+            }
+            &-active {
+                &::after {
+                    @include show;
+                }
+            }
+        }
+    }
+    &-button {
+        &-prev,
+        &-next {
+            --width: 48px;
+            width: var(--width);
+            height: var(--width);
+            background-color: $black;
+            color: $white;
+            border-radius: 100%;
+            &:hover {
+                box-shadow: 0 0 10px rgba($color: $white, $alpha: .10);
+            }
+            &::after {
+                font-size: 20px;
+            }
+        }
+        &-prev {
+            margin-left: var(--margin);
+        }
+        &-next {
+            margin-right: var(--margin);
+        }
+    }
+}

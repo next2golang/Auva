@@ -1,0 +1,179 @@
+.waitlist {
+    padding: 70px 0;
+    @include sm {
+        padding: 20px 0 40px;
+    }
+
+    &-border {
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        padding-bottom: 72px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 109px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 72px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @include sm {
+            display: none;
+        }
+    }
+
+    &-title {
+        text-align: center;
+        position: relative;
+        margin-top: 72px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        margin-bottom: 69px;
+        @include sm {
+            margin: 0;
+            margin-bottom: 30px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0%;
+            transform: translateX(-50%);
+            left: 50%;
+            background: url('../img/waitlist.png') no-repeat;
+            background-size: 100%;
+            width: 50%;
+            height: 100%;
+            z-index: -1;
+            @include sm {
+                display: none;
+            }
+        }
+
+        & h2 {
+            color: $white;
+            @include font-70;
+            text-align: center;
+            display: inline-block;
+            padding: 100px 70px 86px;
+
+            @include xxl {
+                padding: 80px 70px 65px;
+            }
+
+            @include xl {
+                padding: 80px 70px 65px;
+            }
+
+            @include lg {
+                padding: 80px 70px 65px;
+            }
+
+            @include md {
+                padding: 50px 70px;
+            }
+
+            @include sm {
+                padding: 30px 20px;
+            }
+
+            @include ssm {
+                border: none;
+                padding-top: 0;
+            }
+
+            margin-bottom: 0;
+        }
+    }
+
+    &-wraper {
+        max-height: 100%;
+        height: 100%;
+        padding: 10px 11px 20px;
+        border: 1px solid #808080;
+        border-radius: 10px;
+
+        .card {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+        }
+
+        .card-title {
+            color: $white;
+            font-family: $font-1;
+            @include font-18;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        .card-text {
+            color: rgba(255, 255, 255, 0.70);
+            font-family: $font-1;
+            font-size: 14px;
+            padding: 10px 0 9px;
+            max-width: 370px;
+            width: 100%;
+        }
+
+        .card-link {
+            color: $white;
+            font-family: $font-1;
+            font-size: 14px;
+            & svg {
+                margin-left: 5px;
+                width: 12px;
+            }
+
+            &:hover {
+                color: #FFE12F;
+            }
+
+            &:hover svg path{
+                fill: #FFE12F;
+            }
+        }
+
+        .card-body {
+            @include md {
+                padding: 0;
+                padding-top: 15px;
+            }
+
+            @include sm {
+                padding-top: 15px;
+            }
+        }
+    }
+
+    &-border_bottom {
+        margin-top: 60px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: none;
+        border-right: none;
+        padding-bottom: 72px;
+        position: relative;
+
+        @include sm {
+            display: none;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 143px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @include ssm {
+            display: none;
+        }
+    }
+}
