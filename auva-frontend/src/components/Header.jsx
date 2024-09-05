@@ -4,7 +4,6 @@ import { Link } from 'react-scroll';
 import Logo from './Logo';
 import btnimg from "../assets/img/btn.png"
 
-
 export default function Header() {
   const navLinks = [
     {

@@ -3,7 +3,7 @@ import tok_img from '../assets/img/about-img-1.png'
 
 export default function Tokenomics() {
   return (
-    <div className="tokenomics"  id="power-section">
+    <div className="tokenomics" id="power-section">
       <div className="tokenomics-border"></div>
       <div className="tokenomics-inner">
         <div className="tokenomics-heading" data-aos="fade-up" data-aos-delay="" data-aos-offset="">
