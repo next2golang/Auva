@@ -22,6 +22,7 @@ import p_img_12 from '../assets/img/payment/12.png'
 import p_img_13 from '../assets/img/payment/13.png'
 import p_img_14 from '../assets/img/payment/14.png'
 import p_img_15 from '../assets/img/payment/auva.png'
+import CustomConnectButton from './CustomConnectButton';
 
 export default function TokenSection() {
   const endDate = "2024-08-28";
@@ -271,7 +272,7 @@ export default function TokenSection() {
                     </div>
                   </div>
                   <div className="btn-area d-flex align-items-center  gap-3 gap-xl-4">
-                    <a className="btn w-100 text-center">CONNECT WALLET</a>
+                    <CustomConnectButton />
                     <a className="btn w-100 text-center">Buy with BNB</a>
                   </div>
                   <div className="mt-3 mt-md-4 pt-lg-1">
