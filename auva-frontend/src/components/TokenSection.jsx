@@ -133,7 +133,7 @@ export default function TokenSection() {
     setSelectedTwo(e)
   }
 
-  const [tokenModal,setTokenModal] = useState(false)
+  const [tokenModal, setTokenModal] = useState(false)
   const [popupTwo, setPopupTwo] = useState(false)
 
   const [selectedTwo, setSelectedTwo] = useState({
@@ -152,7 +152,7 @@ export default function TokenSection() {
     }, 3000);
     setTimeout(() => {
       setTokenModal(!tokenModal)
-    },1000)
+    }, 1000)
   }
 
   const setCopyToken = (e) => {
@@ -161,6 +161,18 @@ export default function TokenSection() {
     setPopupTwo(!popupTwo)
     setSelected(e)
   }
+
+  const [inputValue, setInputValue] = useState(0);
+
+  const handleInputChange = (e) => {
+    let value = parseInt(e.target.value);
+    console.log("target value" , e.target.value, typeof(e.target.value));
+    if (isNaN(value)) value = 0;
+    if (value == "") value = 0;
+    if (value < 0) value = 0;
+    if (value > 100) value = 100;
+    setInputValue(value);
+  };
 
   return (
     <div className='token'>
@@ -184,8 +196,9 @@ export default function TokenSection() {
                     ))}
                   </div>
                   <div className="line w-100 mb-3 mb-md-4">
-                    <div className="line-bar">
-                      <div className="line-bar-end"><p>UNTIL PRICE INCREASE</p></div>
+                    <div className="line-bar" style={{ overflow: 'hidden', position: 'relative' }}>
+                      <div className="line-bar-end" style={{ width: `${inputValue}%`, height:'30px'} }></div>
+                      <p style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>UNTIL PRICE INCREASE</p>
                     </div>
                   </div>
                   <div className="token-body text-center mb-3 pb-md-1">
@@ -240,7 +253,13 @@ export default function TokenSection() {
                     <div className="input-area-text w-100">
                       <p className='text-start mb-2'>Play your reveive</p>
                       <div className='position-relative z-0'>
-                        <input className='w-100' type="text" placeholder='0' />
+                        <input
+                          className='w-100'
+                          type="number"
+                          placeholder='0'
+                          value={inputValue}
+                          onChange={handleInputChange}
+                        />
                         <img className="position-absolute z-1 end-0 top-50  translate-middle-y me-3 me-md-4" src={Icon2} alt="" />
                       </div>
                     </div>
@@ -253,69 +272,69 @@ export default function TokenSection() {
                     <a href="#" className='h4 fw-semibold lh-base text-black text-decoration-underline'>Don’t have a wallet</a>
                   </div>
                 </div>
-                {tokenModal&&
-                <div className="payment-chain position-absolute top-0 start-0 w-100 h-100 z-2">
-                  <div className="mb-3">
-                    <label htmlFor="#" className='fs-6 mb-2 pb-1 fw-medium text-white'>Select Chain</label>
-                    <div className="payment position-relative z-1">
-                      <div onClick={() => setPopupTwo(!popupTwo)} className="payment-btn z-n1 d-flex align-items-center justify-content-between">
-                        <div className='d-flex align-items-center gap-2 gap-lg-3'>
-                          <img src={selectedTwo.icon} alt="" />
-                          <span>{selectedTwo.name}</span>
-                        </div>
-                        {popupTwo ? <IoIosArrowUp className='h4 mb-0' /> : <IoIosArrowDown className='h4 mb-0' />}
-                      </div>
-                      {popupTwo &&
-                        <div style={{ backgroundColor: '#141319' }} className="payment-dropdown z-n1 position-absolute top-100 start-0 w-100 d-flex align-items-center flex-wrap">
-                          {paymentMethods.map((item, index) => (
-                            <div onClick={() => setCopyToken(item)} className="payment-item d-flex align-items-center gap-2" key={index}>
-                              <img className='me-1' src={item.icon} alt="" />
-                              <span>{item.name}</span>
-                            </div>
-                          ))}
-                        </div>}
-                    </div>
-                  </div>
-                  <div className="d-flex flex-wrap flex-md-nowrap gap-3 mb-3">
-                    <div className="w-100">
-                      <label htmlFor="#" className='fs-6 mb-2 pb-1 fw-medium text-white'>You Pay</label>
-                      <div className="chain-item">
-                        <div className="payment-btn px-3 d-flex align-items-center justify-content-between">
+                {tokenModal &&
+                  <div className="payment-chain position-absolute top-0 start-0 w-100 h-100 z-2">
+                    <div className="mb-3">
+                      <label htmlFor="#" className='fs-6 mb-2 pb-1 fw-medium text-white'>Select Chain</label>
+                      <div className="payment position-relative z-1">
+                        <div onClick={() => setPopupTwo(!popupTwo)} className="payment-btn z-n1 d-flex align-items-center justify-content-between">
                           <div className='d-flex align-items-center gap-2 gap-lg-3'>
                             <img src={selectedTwo.icon} alt="" />
                             <span>{selectedTwo.name}</span>
                           </div>
+                          {popupTwo ? <IoIosArrowUp className='h4 mb-0' /> : <IoIosArrowDown className='h4 mb-0' />}
                         </div>
-                        <h4 className='m-0 mt-3'>Enter Amount</h4>
+                        {popupTwo &&
+                          <div style={{ backgroundColor: '#141319' }} className="payment-dropdown z-n1 position-absolute top-100 start-0 w-100 d-flex align-items-center flex-wrap">
+                            {paymentMethods.map((item, index) => (
+                              <div onClick={() => setCopyToken(item)} className="payment-item d-flex align-items-center gap-2" key={index}>
+                                <img className='me-1' src={item.icon} alt="" />
+                                <span>{item.name}</span>
+                              </div>
+                            ))}
+                          </div>}
                       </div>
                     </div>
-                    <div className="w-100">
-                      <label htmlFor="#" className='fs-6 mb-2 pb-1 fw-medium text-white'>You Recieve</label>
-                      <div className="chain-item">
-                        <div className="payment-btn px-3 d-flex align-items-center justify-content-between">
-                          <div className='d-flex align-items-center gap-2 gap-lg-3'>
-                            <img src={p_img_15} alt="" />
-                            <span>AUVA</span>
+                    <div className="d-flex flex-wrap flex-md-nowrap gap-3 mb-3">
+                      <div className="w-100">
+                        <label htmlFor="#" className='fs-6 mb-2 pb-1 fw-medium text-white'>You Pay</label>
+                        <div className="chain-item">
+                          <div className="payment-btn px-3 d-flex align-items-center justify-content-between">
+                            <div className='d-flex align-items-center gap-2 gap-lg-3'>
+                              <img src={selectedTwo.icon} alt="" />
+                              <span>{selectedTwo.name}</span>
+                            </div>
+                          </div>
+                          <h4 className='m-0 mt-3'>Enter Amount</h4>
+                        </div>
+                      </div>
+                      <div className="w-100">
+                        <label htmlFor="#" className='fs-6 mb-2 pb-1 fw-medium text-white'>You Recieve</label>
+                        <div className="chain-item">
+                          <div className="payment-btn px-3 d-flex align-items-center justify-content-between">
+                            <div className='d-flex align-items-center gap-2 gap-lg-3'>
+                              <img src={p_img_15} alt="" />
+                              <span>AUVA</span>
+                            </div>
+                          </div>
+                          <div className='mt-3'>
+                            <input className='mb-0 h4 bg-transparent border-0 p-0' defaultValue={0} />
                           </div>
                         </div>
-                        <div className='mt-3'>
-                          <input className='mb-0 h4 bg-transparent border-0 p-0' defaultValue={0} />
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="mb-3">
-                    <a href="#" className='btn bg-primary rounded-3 d-block'>Connect Your Wallet</a>
-                  </div>
-                  <div className="chain-item mb-3">
-                    <p className='fs-6 lh-base text-white mb-2'>You Can Also Make A Purchase By Sending SOL, USDT Or USDC Directly To The Solana Address From Your Web3 Wallet</p>
-                    <div className="chain-copy position-relative">
-                      <p className='fs-6 lh-base text-white'>{activeToken}</p>
-                      <button onClick={() => copyHandle()} className="btn bg-primary rounded-3 position-absolute top-50 translate-middle-y end-0 me-1">{isCopied?'Copied':'Copy'}</button>
+                    <div className="mb-3">
+                      <a href="#" className='btn bg-primary rounded-3 d-block'>Connect Your Wallet</a>
                     </div>
-                  </div>
-                  <a href="#" className="btn bg-transparent text-white text-decoration-underline d-block rounded-3">Transaction History</a>
-                </div>}
+                    <div className="chain-item mb-3">
+                      <p className='fs-6 lh-base text-white mb-2'>You Can Also Make A Purchase By Sending SOL, USDT Or USDC Directly To The Solana Address From Your Web3 Wallet</p>
+                      <div className="chain-copy position-relative">
+                        <p className='fs-6 lh-base text-white'>{activeToken}</p>
+                        <button onClick={() => copyHandle()} className="btn bg-primary rounded-3 position-absolute top-50 translate-middle-y end-0 me-1">{isCopied ? 'Copied' : 'Copy'}</button>
+                      </div>
+                    </div>
+                    <a href="#" className="btn bg-transparent text-white text-decoration-underline d-block rounded-3">Transaction History</a>
+                  </div>}
               </div>
             </Col>
             <Col xs={12} lg={6} xl={7}>

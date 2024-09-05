@@ -19,7 +19,7 @@ export default function Social({ className }) {
     //   name: 'reddit',
     // },
     {
-      icon:social_2,
+      icon: social_2,
       url: twitter,
       name: 'twitter',
     },
