@@ -165,13 +165,19 @@ export default function TokenSection() {
   const [inputValue, setInputValue] = useState(0);
 
   const handleInputChange = (e) => {
-    let value = parseInt(e.target.value);
-    console.log("target value" , e.target.value, typeof(e.target.value));
-    if (isNaN(value)) value = 0;
-    if (value == "") value = 0;
-    if (value < 0) value = 0;
-    if (value > 100) value = 100;
-    setInputValue(value);
+    let value = e.target.value;
+
+    console.log("value", value, typeof(value));
+    if (value.startsWith('0') && value.length > 1) {
+      value = value.replace(/^0+/, '');
+    }
+
+    let numberValue = parseInt(value);
+    if (isNaN(numberValue)) numberValue = 0;
+    if (numberValue == "") numberValue = 0;
+    if (numberValue < 0) numberValue = 0;
+    if (numberValue > 100) numberValue = 100;
+    setInputValue(numberValue);
   };
 
   return (
@@ -256,9 +262,9 @@ export default function TokenSection() {
                         <input
                           className='w-100'
                           type="number"
-                          placeholder='0'
+                          // placeholder=''
                           value={inputValue}
-                          onChange={handleInputChange}
+                          onChange={(e) => handleInputChange(e)}
                         />
                         <img className="position-absolute z-1 end-0 top-50  translate-middle-y me-3 me-md-4" src={Icon2} alt="" />
                       </div>
